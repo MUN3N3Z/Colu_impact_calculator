@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Impact Calculator
+{% endblock %}
+
+{% block main %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    h2 {
+        text-align: center;
+    }
+</style>
+<div class="form-wrapper" style="text-align: center;">
+    <h2 class="title">Economic Impact Calculator</h2>
+
+    <form method="post" action="\" novalidate style="display: inline-block">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-field">
+            {{ form.rewards_budget.label }}
+            {{ form.rewards_budget }}
+        </fieldset>
+        <fieldset class="form-field">
+            {{ form.colu_fee.label }}
+            {{ form.colu_fee }}
+        </fieldset>
+        <fieldset class="form-field">
+            {{ form.population.label }}
+            {{ form.population }}
+        </fieldset>
+        <fieldset class="form-field">
+            {{ form.tax_rate.label }}
+            {{ form.tax_rate }}
+        </fieldset>
+        <fieldset class="form-field">
+            {{ form.third_party_budget.label }}
+            {{ form.third_party_budget }}
+        </fieldset>
+        <fieldset class="form-field">
+            {{ form.percentage_back.label }}
+            {{ form.percentage_back }}
+        </fieldset>
+        {{ form.submit }}
+    </form>
+</div>
+
+{% if calculation_success == False %}
+<p>{{error}}</p>
+
+{% else %}
+
+<div>
+<table>
+  <tr>
+    <th>Initial Economic Impact</th>
+    <th>Secondary Local Spending</th>
+    <th>Total Economic Impact</th>
+    <th>Additional Tax</th>
+    <th>Economic Multiplier</th>
+  </tr>
+  <tr>
+    <td>${{initial_economic_impact}}</td>
+    <td>${{secondary_local_spending}}</td>
+    <td>${{total_economic_impact}}</td>
+    <td>${{additional_tax}}</td>
+    <td>{{economic_multiplier}}</td>
+  </tr>
+  
+</table>
+</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Economic Impact Table
+{% endblock %}
+
+{% block main %}
+<div id="box">
+    <main id="center">
+        <h1>Accounting Data</h1>
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+                <tr>
+                    <th>Initial Economic Impact</th>
+                    <th>Secondary Local Spending</th>
+                    <th>Total Economic Impact</th>
+                    <th>Additional Tax</th>
+                    <th>Economic Multiplier</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{initial_economic_impact}}</td>
+                    <td>{{secondary_local_spending}}</td>
+                    <td>{{total_economic_impact}}</td>
+                    <td>{{additional_tax}}</td>
+                    <td>{{economic_multiplier}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+{% endblock %}
