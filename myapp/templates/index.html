@@ -5,26 +5,7 @@ Impact Calculator
 {% endblock %}
 
 {% block main %}
-<style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: center;
-      padding: 8px;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-    h2 {
-        text-align: center;
-    }
-</style>
+
 <div class="form-wrapper" style="text-align: center;">
     <h2 class="title">Economic Impact Calculator</h2>
 
@@ -73,10 +54,10 @@ Impact Calculator
     <th>Economic Multiplier</th>
   </tr>
   <tr>
-    <td>${{initial_economic_impact}}</td>
-    <td>${{secondary_local_spending}}</td>
-    <td>${{total_economic_impact}}</td>
-    <td>${{additional_tax}}</td>
+    <td>$ {{initial_economic_impact}}</td>
+    <td>$ {{secondary_local_spending}}</td>
+    <td>$ {{total_economic_impact}}</td>
+    <td>$ {{additional_tax}}</td>
     <td>{{economic_multiplier}}</td>
   </tr>
   

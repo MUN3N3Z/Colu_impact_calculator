@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, flash
 import os
 from forms import EconomicImpactForm
 
@@ -59,4 +59,5 @@ def calculator():
 
 
     else:
+        flash("Input data is invalid. Please try again...")
         return render_template("index.html", form=form)
